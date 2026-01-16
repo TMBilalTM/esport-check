@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GameController DEMO
 
-## Getting Started
+Modern esports match & team tracker for VALORANT and CS2. Live matches, upcoming schedules, team pages, and follow lists in a single, fast App Router experience.
 
-First, run the development server:
+## Özellikler
+
+- Gerçek zamanlı maç takibi (live/upcoming/completed)
+- Takım listesi, takım detayları ve takip sistemi
+- Oyun bazlı filtreler (Valorant / CS2)
+- Takımlar için gelişmiş filtreler (platform, Valorant bölge filtresi)
+- Gelişmiş kartlar, animasyonlar ve responsive grid
+- API fallback verileri (scrape başarısız olursa)
+
+## Veri Kaynakları
+
+- VLR: https://vlr.orlandomm.net/api/v1
+- HLTV: https://hltv-api.vercel.app/api
+
+> Not: Bu kaynaklar üçüncü taraf topluluk API’leridir. Uptime ve veri formatı değişiklik gösterebilir.
+
+## Teknoloji Yığını
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Radix UI + Shadcn UI bileşenleri
+- Zustand (client state)
+- Framer Motion (animasyon)
+
+## Sayfalar
+
+- / → Landing (live matches, featured teams, games)
+- /matches → Maç listesi
+- /match/[id] → Maç detayı
+- /teams → Takım listesi + filtre paneli
+- /team/[id] → Takım detayı
+- /tournaments → Turnuva listesi
+
+## API Rotaları
+
+- /api/matches
+- /api/match/[id]
+- /api/teams
+- /api/team/[id]
+
+## Kurulum
+
+Ön koşullar: Node.js 18+ önerilir.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Uygulama: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scriptler
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- dev: Next.js dev server
+- build: production build
+- start: production server
+- lint: ESLint
 
-## Learn More
+## Ortam Değişkenleri
 
-To learn more about Next.js, take a look at the following resources:
+Bu proje için zorunlu bir .env tanımı yoktur.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel üzerinde doğrudan deploy edilebilir. App Router ile uyumludur.
