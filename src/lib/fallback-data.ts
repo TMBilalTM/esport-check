@@ -1,0 +1,171 @@
+import type { Match, Team } from '@/types';
+
+// Fallback matches - scraping başarısız olursa bu veriler gösterilir
+export const FALLBACK_MATCHES: Match[] = [
+  {
+    id: 'fallback-1',
+    platform: 'vlr',
+    game: 'valorant',
+    status: 'live',
+    startTime: new Date(Date.now() - 30 * 60 * 1000), // 30 dakika önce başladı
+    team1: {
+      team: {
+        id: 'team-sentinels',
+        name: 'Sentinels',
+        shortName: 'SEN',
+        logo: 'https://owcdn.net/img/6405633b5a93d.png',
+        game: 'valorant',
+        platform: 'vlr',
+        brandColor: '#ff4655',
+      },
+      score: 8,
+    },
+    team2: {
+      team: {
+        id: 'team-loud',
+        name: 'LOUD',
+        shortName: 'LOU',
+        logo: 'https://owcdn.net/img/640fcdfc1c57b.png',
+        game: 'valorant',
+        platform: 'vlr',
+        brandColor: '#00d560',
+      },
+      score: 5,
+    },
+    tournament: {
+      id: 'vct-americas',
+      name: 'VCT Americas',
+      tier: 'S-Tier',
+    },
+    format: 'Bo3',
+  },
+  {
+    id: 'fallback-2',
+    platform: 'hltv',
+    game: 'cs2',
+    status: 'upcoming',
+    startTime: new Date(Date.now() + 2 * 60 * 60 * 1000), // 2 saat sonra
+    team1: {
+      team: {
+        id: 'team-navi',
+        name: 'Natus Vincere',
+        shortName: 'NAVI',
+        logo: 'https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=bfd52e6d2c28f6e0e8a1b6dffca9f56a',
+        game: 'cs2',
+        platform: 'hltv',
+        brandColor: '#ffcc00',
+      },
+      score: 0,
+    },
+    team2: {
+      team: {
+        id: 'team-faze',
+        name: 'FaZe Clan',
+        shortName: 'FaZe',
+        logo: 'https://img-cdn.hltv.org/teamlogo/8VVQ5qB2mYPasf1YQ3P-Yj.svg?ixlib=java-2.1.0&s=cbef103d5c6e7f359c0742dc0fb44ec6',
+        game: 'cs2',
+        platform: 'hltv',
+        brandColor: '#dc0228',
+      },
+      score: 0,
+    },
+    tournament: {
+      id: 'blast-premier',
+      name: 'BLAST Premier',
+      tier: 'S-Tier',
+    },
+    format: 'Bo3',
+  },
+  {
+    id: 'fallback-3',
+    platform: 'vlr',
+    game: 'valorant',
+    status: 'upcoming',
+    startTime: new Date(Date.now() + 5 * 60 * 60 * 1000), // 5 saat sonra
+    team1: {
+      team: {
+        id: 'team-fnatic',
+        name: 'Fnatic',
+        shortName: 'FNC',
+        logo: 'https://owcdn.net/img/640563392e109.png',
+        game: 'valorant',
+        platform: 'vlr',
+        brandColor: '#ff5900',
+      },
+      score: 0,
+    },
+    team2: {
+      team: {
+        id: 'team-navi-val',
+        name: 'NAVI',
+        shortName: 'NAVI',
+        logo: 'https://owcdn.net/img/6405635fcf417.png',
+        game: 'valorant',
+        platform: 'vlr',
+        brandColor: '#ffcc00',
+      },
+      score: 0,
+    },
+    tournament: {
+      id: 'vct-emea',
+      name: 'VCT EMEA',
+      tier: 'S-Tier',
+    },
+    format: 'Bo3',
+  },
+];
+
+export const FALLBACK_TEAMS: Team[] = [
+  {
+    id: 'team-sentinels',
+    name: 'Sentinels',
+    shortName: 'SEN',
+    logo: 'https://owcdn.net/img/6405633b5a93d.png',
+    game: 'valorant',
+    platform: 'vlr',
+    brandColor: '#ff4655',
+    country: 'United States',
+    region: 'North America',
+    ranking: 1,
+    isFollowed: false,
+  },
+  {
+    id: 'team-loud',
+    name: 'LOUD',
+    shortName: 'LOU',
+    logo: 'https://owcdn.net/img/640fcdfc1c57b.png',
+    game: 'valorant',
+    platform: 'vlr',
+    brandColor: '#00d560',
+    country: 'Brazil',
+    region: 'South America',
+    ranking: 2,
+    isFollowed: false,
+  },
+  {
+    id: 'team-navi',
+    name: 'Natus Vincere',
+    shortName: 'NAVI',
+    logo: 'https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=bfd52e6d2c28f6e0e8a1b6dffca9f56a',
+    game: 'cs2',
+    platform: 'hltv',
+    brandColor: '#ffcc00',
+    country: 'Ukraine',
+    region: 'Europe',
+    ranking: 1,
+    isFollowed: false,
+  },
+  {
+    id: 'team-faze',
+    name: 'FaZe Clan',
+    shortName: 'FaZe',
+    logo: 'https://img-cdn.hltv.org/teamlogo/8VVQ5qB2mYPasf1YQ3P-Yj.svg?ixlib=java-2.1.0&s=cbef103d5c6e7f359c0742dc0fb44ec6',
+    game: 'cs2',
+    platform: 'hltv',
+    brandColor: '#dc0228',
+    country: 'Europe',
+    region: 'Europe',
+    ranking: 2,
+    isFollowed: false,
+  },
+];
